@@ -1,0 +1,96 @@
+---
+title: "Conditionals Loops"
+author: "Jared Petry"
+date: "2022-08-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Libraries 
+```{r}
+
+```
+
+task 1
+
+```{r}
+pm2_5 <- 120 
+
+if (pm2_5 < 100) {
+  print("Low to moderate risk")
+} else if (100 <= pm2_5 & pm2_5 < 150) {
+  print("unhealthy for sensitive groups")
+} else if (pm2_5 >= 150) {
+  print("health risk present")
+}
+```
+
+task 2
+
+```{r}
+species <- "blue whale"
+
+if (str_detect(species, pattern = "whale")) {
+  print("you found a whale!")
+}
+  
+```
+
+task 3
+
+```{r}
+max_airtemp_c <- 24.1
+
+if (max_airtemp_c > 27) {
+  print("temperature too high")
+} else if (max_airtemp_c <= 27) {
+  print("temp ok")
+}
+```
+
+task 4 
+
+```{r}
+base_burrito <- 6.50 
+main_ingredient <- "steak"
+
+if (str_detect(main_ingredient, pattern = "veggie")) {
+  print(base_burrito) 
+} else if(str_detect(main_ingredient, pattern = "chicken")) {
+  print(base_burrito + 3)
+} else if (str_detect(main_ingredient, pattern = "steak")) {
+  print(base_burrito + 3.25)
+}
+  
+
+
+```
+
+### For Loops
+
+task 5 
+
+```{r}
+#---- counts of fish in the tank: 
+fish <- c(8, 10, 12, 23)
+#---- total number of fish therefore is:
+fish_total <- 8 + 10 + 12 + 23
+
+for (i in seq_along(fish)) {
+  fish_prop = fish[i] / fish_total
+  print(fish_prop)
+} 
+```
+
+task 6 
+
+```{r}
+for (i in seq_along(month.name)) {
+  month_is = paste(month.name[i], "is month", i)
+  print(month_is)
+}
+```
+
